@@ -1,17 +1,27 @@
 import './App.css';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { getBooks } from './actions/books'
 
 class App extends Component {
 
   componentDidMount () {
-    
+    this.props.getBooks()
   }
 
   render() {
-
     const books = this.props.books.map((book, i) => {
-        return <li key={i}>{book.title}</li>
+        return <div>
+        <li key={i}>
+            <h3>
+              {book.title}
+            </h3>
+            <p> 
+              {book.description} 
+            </p>
+          </li>
+          <hr/>
+          </div>
     })
 
     return (
@@ -32,4 +42,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {getBooks})(App);
