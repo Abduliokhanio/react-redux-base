@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks, deleteBook } from './actions/books'
 
-//comp
+//component
 import BookForm from './containers/BookForm'
+
+//styling
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
 
@@ -19,19 +22,21 @@ class App extends Component {
 
   render() {
     const books = this.props.books.map((book, i) => {
-        return <div>
-        <li key={i}>
-
-            <h3>
-              {book.title + " "}
-              <button id = {book.id} onClick={this.handleClick}>X</button>
-            </h3> 
-            <p> 
-              {book.description} 
-            </p>
-          </li>
-          <hr/>
-          </div>
+        return (
+        <div>
+          <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+            <li key={i}>
+                <h3>
+                  {book.title + " "}
+                  <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                </h3> 
+                <p> 
+                  {book.description} 
+                </p>
+              </li>
+              <hr/>
+          </div>)
+        
     })
 
     return (

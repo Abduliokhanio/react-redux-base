@@ -35,7 +35,8 @@ class BookForm extends Component {
             <div>
                 <form onSubmit = {this.handleSubmit}>
                     title <input type="text" value ={this.state.title} onChange={this.handleChangeTitle} /><br/>
-                    desc <input type="text" value ={this.state.description} onChange={this.handleChangeDesc}/><br/>
+                    <br/>
+                    desc <textarea type="text" value ={this.state.description} onChange={this.handleChangeDesc}/><br/>
                     <input type="submit"/>
                 </form>
             </div>
