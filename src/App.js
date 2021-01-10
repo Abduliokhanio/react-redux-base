@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks, deleteBook } from './actions/books'
 
-//component
+//component State-full
 import BookForm from './containers/BookForm'
+
+//component Stateless
+import Navigation from './containers/Nav'
 
 //styling
 import { Button } from 'react-bootstrap';
@@ -42,6 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
+          <Navigation/>
           <h1>Build a book</h1>
           <BookForm />
           <h1>Book App</h1>
