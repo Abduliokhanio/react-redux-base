@@ -1,25 +1,26 @@
 import React from 'react'
-import { Nav } from 'react-bootstrap'
+import { Nav,Navbar,Form,FormControl,Button } from 'react-bootstrap'
+import {Link} from 'react-router-dom';
+import '../index.css';
 
 function Navigation() {
     return (
-        <div>
-            <h1>Nav bar</h1>
-            <Nav variant="pills" defaultActiveKey="/home">
-                <Nav.Item>
-                    <Nav.Link href="/home">Active</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-2">Option 3</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link eventKey="link-3">Option 4</Nav.Link>
-                </Nav.Item>
-            </Nav>
-        </div>
+            <div> 
+                <h1>Nav bar</h1>
+                <Navbar bg="primary" variant="dark">
+                    <Navbar.Brand><Link to="/" className = "link">Home</Link></Navbar.Brand>
+                    <Nav className="mr-auto">
+                    <Nav.Link ><Link to="/new" className = "link">New</Link></Nav.Link>
+                    <Nav.Link >Features</Nav.Link>
+                    <Nav.Link >Pricing</Nav.Link>
+                    </Nav>
+                    <Form inline>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-light">Search</Button>
+                    </Form>
+                </Navbar>
+            </div>
+        
     )
 }
 

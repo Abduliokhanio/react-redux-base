@@ -33,6 +33,7 @@ class BookForm extends Component {
     render() {
         return (
             <div>
+                 <h1>Build a book</h1>
                 <form onSubmit = {this.handleSubmit}>
                     title <input type="text" value ={this.state.title} onChange={this.handleChangeTitle} /><br/>
                     <br/>

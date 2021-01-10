@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks, deleteBook } from './actions/books'
 
+//links
+import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
+
 //component State-full
 import BookForm from './containers/BookForm'
 
@@ -43,15 +46,22 @@ class App extends Component {
     })
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <Navigation/>
-          <h1>Build a book</h1>
-          <BookForm />
-          <h1>Book App</h1>
-          <ul>{this.props.loading ? <h3>Loading...</h3> : books}</ul>
+      <Router>
+        <div className="App">
+        <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+          <div className="App-header">
+            <Navigation/>
+      
+              {/* <BookForm /> */}
+              <h1>Book App</h1>
+              <ul>{this.props.loading ? <h3>Loading...</h3> : books}</ul>
+
+            <Switch> 
+              <Route path="/new" component={BookForm}/>
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
