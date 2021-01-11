@@ -1,22 +1,11 @@
-import './App.css';
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook } from './actions/books'
+import { getBooks, deleteBook } from '../actions/books'
 
-//links
-import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
+import {Button} from 'react-bootstrap'
 
-//component State-full
-import BookForm from './containers/BookForm'
 
-//component Stateless
-import Navigation from './containers/Nav'
-import BooksIndex from './containers/BooksIndex'
-
-//styling
-import { Button } from 'react-bootstrap';
-
-class App extends Component {
+class BooksIndex extends Component {
 
   componentDidMount () {
     this.props.getBooks()
@@ -47,19 +36,10 @@ class App extends Component {
     })
 
     return (
-      <Router>
-        <div className="App">
-        <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-          <div className="App-header">
-            <Navigation/>
-
-            <Switch> 
-              <Route exact path="/" component={BooksIndex}/>
-              <Route path="/new" component={BookForm}/>
-            </Switch>
-          </div>
+        <div>
+              <h1>Book App</h1>
+              <ul>{this.props.loading ? <h3>Loading...</h3> : books}</ul>
         </div>
-      </Router>
     );
   }
 }
@@ -71,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getBooks, deleteBook})(App);
+export default connect(mapStateToProps, {getBooks, deleteBook})(BooksIndex);
