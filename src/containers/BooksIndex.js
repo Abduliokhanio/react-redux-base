@@ -16,6 +16,11 @@ class BooksIndex extends Component {
     this.props.deleteBook(event.target.id)
   }
 
+  handleClickEdit = (event) =>{
+    event.preventDefault()
+    debugger
+  }
+
   render() {
     const books = this.props.books.map((book, i) => {
         return (
@@ -24,6 +29,7 @@ class BooksIndex extends Component {
             <li key={i}>
                 <h3>
                   {book.title + " "}
+                  <Button variant="success" id = {book.id} onClick={this.handleClickEdit}>Edit</Button>
                   <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
                 </h3> 
                 <p> 
