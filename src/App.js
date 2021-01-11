@@ -11,7 +11,6 @@ import BooksIndex from './containers/BooksIndex'
 //component Stateless
 import Navigation from './containers/Nav'
 
-
 class App extends Component {
 
   render() {

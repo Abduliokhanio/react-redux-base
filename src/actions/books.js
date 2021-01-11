@@ -37,3 +37,20 @@ export const deleteBook = (id) => {
         .then(() => dispatch({type: "BOOK_DELETED", payload: id}))
     }
 }
+
+export const editBook = (id) => {
+    let book = {title: "", description: ""}
+    debugger
+    return dispatch => {
+        dispatch({type: "EDITING_BOOK"})
+        fetch(`/blocks/${id}`,{
+            method: 'PATCH',
+            body: JSON.stringify(book),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+        .then(() => dispatch({type: "BOOK_EDITED", payload: id}))
+    }
+}

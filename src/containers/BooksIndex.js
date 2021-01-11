@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook } from '../actions/books'
+import { getBooks, deleteBook, editBook } from '../actions/books'
 
 import {Button} from 'react-bootstrap'
 
@@ -18,7 +18,7 @@ class BooksIndex extends Component {
 
   handleClickEdit = (event) =>{
     event.preventDefault()
-    debugger
+    this.props.editBook(event.target.id)
   }
 
   render() {
@@ -57,4 +57,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getBooks, deleteBook})(BooksIndex);
+export default connect(mapStateToProps, {getBooks, deleteBook,editBook})(BooksIndex);
