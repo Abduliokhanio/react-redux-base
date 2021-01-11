@@ -1,7 +1,5 @@
 import './App.css';
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { getBooks, deleteBook } from './actions/books'
 
 //links
 import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
@@ -13,19 +11,7 @@ import BookForm from './containers/BookForm'
 import Navigation from './containers/Nav'
 import BooksIndex from './containers/BooksIndex'
 
-//styling
-import { Button } from 'react-bootstrap';
-
 class App extends Component {
-
-  componentDidMount () {
-    this.props.getBooks()
-  }
-
-  handleClick = (event) =>{
-    event.preventDefault()
-    this.props.deleteBook(event.target.id)
-  }
 
   render() {
 
@@ -35,7 +21,7 @@ class App extends Component {
         <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
           <div className="App-header">
             <Navigation/>
-
+            
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route path="/new" component={BookForm}/>
@@ -47,11 +33,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return{
-    books: state.bookReducer.books,
-    loading: state.bookReducer.loading
-  }
-}
-
-export default connect(mapStateToProps, {getBooks, deleteBook})(App);
+export default App;

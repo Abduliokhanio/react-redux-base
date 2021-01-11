@@ -6,8 +6,7 @@ import '../index.css';
 function Navigation() {
     return (
             <div> 
-                <h1>Nav bar</h1>
-                <Navbar bg="primary" variant="dark">
+                <Navbar bg="primary" variant="dark" fixed="top">
                     <Navbar.Brand><Link to="/" className = "link">Home</Link></Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Link ><Link to="/new" className = "link">New</Link></Nav.Link>
