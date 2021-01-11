@@ -13,7 +13,13 @@ export default (state = {books: [], loading: false}, action) => {
         case("BOOK_ADDED"):
             return {...state, loading:false, books: [...state.books, action.payload] }
 
-        //READ
+        //Read
+        case("READING_BOOK")://idk what im doing here lol
+            return {...state, loading:true}
+        case("BOOK_READ")://idk what im doing here lol
+            return {...state, loading:false, books: state.books.filter(book => book.id == action.payload)}
+
+        //EDIT
         case("EDITING_BOOK")://idk what im doing here lol
             return {...state, loading:true}
         case("BOOK_EDITED")://idk what im doing here lol

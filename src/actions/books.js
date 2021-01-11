@@ -1,3 +1,4 @@
+import { useDispatch } from "react-redux"
 //action obeject creator function
 export const getBooks = () => {
     return dispatch => {
@@ -38,12 +39,11 @@ export const deleteBook = (id) => {
     }
 }
 
-export const editBook = (id) => {
-    let book = {title: "", description: ""}
-    debugger
+export const editBook = (bookpassed) => { 
+    let book = {title: bookpassed.title, description: bookpassed.description}
     return dispatch => {
         dispatch({type: "EDITING_BOOK"})
-        fetch(`/blocks/${id}`,{
+        fetch(`/blocks/${bookpassed.id}`,{
             method: 'PATCH',
             body: JSON.stringify(book),
             headers: {
@@ -51,6 +51,14 @@ export const editBook = (id) => {
                 "Accept": "application/json"
             }
         })
-        .then(() => dispatch({type: "BOOK_EDITED", payload: id}))
+        .then(() => dispatch({type: "BOOK_EDITED", payload: bookpassed}))
+    }
+}
+
+export const readBook = (id) => { //needs to work
+    return dispatch => {
+        dispatch({type: "READING_BOOK"})
+        fetch(`/blocks/${id}`)
+        .then(() => dispatch({type: "BOOK_READ", payload: id}))
     }
 }

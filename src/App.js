@@ -7,9 +7,11 @@ import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
 //component State-full
 import BookForm from './containers/BookForm'
 import BooksIndex from './containers/BooksIndex'
+import EditForm from './containers/EditForm'
 
 //component Stateless
 import Navigation from './containers/Nav'
+import BookDetail from './containers/BookDetail';
 
 class App extends Component {
 
@@ -23,7 +25,9 @@ class App extends Component {
             
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
-              <Route path="/new" component={BookForm}/>
+              <Route exact path="/new" component={BookForm}/>
+              <Route exact path="/books/:id" component={BookDetail}/>
+              <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
         </div>        
       </Router>

@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook, editBook } from '../actions/books'
+import { getBooks, deleteBook, editBook, readBook } from '../actions/books'
 
 import {Button} from 'react-bootstrap'
 
+//link
+import { Link } from 'react-router-dom'
+
+//css
+import "../index.css"
 
 class BooksIndex extends Component {
 
@@ -16,10 +21,9 @@ class BooksIndex extends Component {
     this.props.deleteBook(event.target.id)
   }
 
-  handleClickEdit = (event) =>{
-    event.preventDefault()
-    this.props.editBook(event.target.id)
-  }
+  // handleClickRead = (event) => {
+  //   event.preventDefault()
+  // }
 
   render() {
     const books = this.props.books.map((book, i) => {
@@ -29,7 +33,8 @@ class BooksIndex extends Component {
             <li key={i}>
                 <h3>
                   {book.title + " "}
-                  <Button variant="success" id = {book.id} onClick={this.handleClickEdit}>Edit</Button>
+                  <Button variant="success" id = {book.id}><Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}>EDIT</Link></Button>
+                  <Button variant="info" id = {book.id} ><Link to={`/books/${book.id}` } className = "link" id = {book.id}>Read</Link></Button>
                   <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
                 </h3> 
                 <p> 
@@ -57,4 +62,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getBooks, deleteBook,editBook})(BooksIndex);
+export default connect(mapStateToProps, {getBooks, deleteBook,editBook, readBook})(BooksIndex);
