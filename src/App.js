@@ -6,10 +6,11 @@ import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
 
 //component State-full
 import BookForm from './containers/BookForm'
+import BooksIndex from './containers/BooksIndex'
 
 //component Stateless
 import Navigation from './containers/Nav'
-import BooksIndex from './containers/BooksIndex'
+
 
 class App extends Component {
 
