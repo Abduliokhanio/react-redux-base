@@ -55,10 +55,15 @@ export const editBook = (bookpassed) => {
     }
 }
 
-export const readBook = (id) => { //needs to work
-    return dispatch => {
-        dispatch({type: "READING_BOOK"})
-        fetch(`/blocks/${id}`)
-        .then(() => dispatch({type: "BOOK_READ", payload: id}))
-    }
-}
+// export const readBook = (book) => { //needs to work
+//     const id = book.firstElementChild.id
+//     debugger
+//     const editedBook = {title: , description: }
+//     return dispatch => {
+        
+//         dispatch({type: "READING_BOOK"})
+//         fetch(`/blocks/${id}`)
+//         .then(res => res.json())
+//         .then(() => dispatch({type: "BOOK_READ", payload: book}))
+//     }
+// }

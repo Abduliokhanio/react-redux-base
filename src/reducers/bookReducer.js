@@ -14,10 +14,11 @@ export default (state = {books: [], loading: false}, action) => {
             return {...state, loading:false, books: [...state.books, action.payload] }
 
         //Read
-        case("READING_BOOK")://idk what im doing here lol
-            return {...state, loading:true}
-        case("BOOK_READ")://idk what im doing here lol
-            return {...state, loading:false, books: state.books.filter(book => book.id == action.payload)}
+        // case("READING_BOOK")://idk what im doing here lol
+        //     return {...state, loading:true}
+        // case("BOOK_READ")://idk what im doing here lol
+        //     debugger
+        //     return {...state, loading:false, books: state.books.filter(book => book.id == action.payload)}
 
         //EDIT
         case("EDITING_BOOK")://idk what im doing here lol
