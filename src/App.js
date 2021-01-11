@@ -17,17 +17,15 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="App">
+        <div className="App App-background">
         <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-          <div className="App-header">
             <Navigation/>
             
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route path="/new" component={BookForm}/>
             </Switch>
-          </div>
-        </div>
+        </div>        
       </Router>
     );
   }

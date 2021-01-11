@@ -5,7 +5,7 @@ import '../index.css';
 
 function Navigation() {
     return (
-            <div> 
+            <div className="App-header">
                 <Navbar bg="primary" variant="dark" fixed="top">
                     <Navbar.Brand><Link to="/" className = "link">Home</Link></Navbar.Brand>
                     <Nav className="mr-auto">
