@@ -15,6 +15,7 @@ import AboutPage from './containers/AboutPage'
 import Footer from './containers/Footer'
 import Jobs from './containers/Jobs'
 import Contact from './containers/Contact'
+import Team from './containers/Team'
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
               <Route exact path="/about" component={AboutPage}/>
               <Route exact path="/jobs" component={Jobs}/>
               <Route exact path="/contact" component={Contact}/>
+              <Route exact path="/teams" component={Team}/>
               <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
 
