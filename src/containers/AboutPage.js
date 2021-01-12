@@ -10,11 +10,11 @@ function AboutPage() {
         <div style={{ color: 'black', paddingBottom: "100px"}}>
             <div className ="center-card">
                 <Card style={{ width: '75%' }}>
-                    
-                        <h1>About Us:</h1>
+                    <div className = "px-3">
                         <AboutPgImg/>
                         <AboutInspText/>
                         <AboutCardDeck/>
+                    </div>
                 </Card>
             </div> 
         </div>
