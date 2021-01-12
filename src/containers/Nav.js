@@ -10,8 +10,8 @@ function Navigation() {
                     <Navbar.Brand><Link to="/" className = "link">Home</Link></Navbar.Brand>
                     <Nav className="mr-auto">
                     <Nav.Link ><Link to="/new" className = "link">New</Link></Nav.Link>
-                    <Nav.Link >Features</Nav.Link>
-                    <Nav.Link >Pricing</Nav.Link>
+                    <Nav.Link ><Link to="/about" className = "link">About</Link></Nav.Link>
+                    
                     </Nav>
                     {/* <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />

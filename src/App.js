@@ -26,6 +26,7 @@ class App extends Component {
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route exact path="/new" component={BookForm}/>
+              <Route exact path="/about" component={BookForm}/>
               <Route exact path="/books/:id" component={BookDetail}/>
               <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
