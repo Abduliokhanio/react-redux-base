@@ -11,7 +11,10 @@ import EditForm from './containers/EditForm'
 
 //component Stateless
 import Navigation from './containers/Nav'
-import BookDetail from './containers/BookDetail';
+import AboutPage from './containers/AboutPage'
+import Footer from './containers/Footer'
+import Jobs from './containers/Jobs'
+import Contact from './containers/Contact'
 
 class App extends Component {
 
@@ -26,10 +29,13 @@ class App extends Component {
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route exact path="/new" component={BookForm}/>
-              <Route exact path="/about" component={BookForm}/>
-              <Route exact path="/books/:id" component={BookDetail}/>
+              <Route exact path="/about" component={AboutPage}/>
+              <Route exact path="/jobs" component={Jobs}/>
+              <Route exact path="/contact" component={Contact}/>
               <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
+
+            <Footer />
         </div>        
       </Router>
     );

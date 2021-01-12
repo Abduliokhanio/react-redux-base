@@ -7,7 +7,7 @@ function Navigation() {
     return (
             <div className="App-header">
                 <Navbar bg="primary" variant="dark" fixed="top">
-                    <Navbar.Brand><Link to="/" className = "link">Home</Link></Navbar.Brand>
+                    <Nav.Link><Link to="/" className = "link">Home</Link></Nav.Link>
                     <Nav className="mr-auto">
                     <Nav.Link ><Link to="/new" className = "link">New</Link></Nav.Link>
                     <Nav.Link ><Link to="/about" className = "link">About</Link></Nav.Link>
