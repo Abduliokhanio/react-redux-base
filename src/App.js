@@ -28,8 +28,10 @@ class App extends Component {
       <Router>
         <div className="App App-background">
         <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-            <Navigation/>
             <div className="pb-5">
+              <Navigation/>
+            </div>
+            <div className="py-5">
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route exact path="/new" component={BookForm}/>
