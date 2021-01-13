@@ -6,7 +6,7 @@ function TeamDetail(props) {
 
     useEffect(() => {
         teamMemberInfo(props.match.params.id)
-        pokemon(Math.floor(Math.random() * 800) + 1)
+        pokemon(Math.floor(Math.random() * 500) + 1)
         
     }, [])
 
