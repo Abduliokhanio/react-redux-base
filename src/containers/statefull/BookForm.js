@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBook } from '../actions/books'
+import { addBook } from '../../actions/books'
 
 class BookForm extends Component {
     state = {

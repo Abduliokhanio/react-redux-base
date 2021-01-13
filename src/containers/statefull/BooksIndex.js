@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook, editBook } from '../actions/books'
+import { getBooks, deleteBook, editBook } from '../../actions/books'
 // import { getBooks, deleteBook, editBook, readBook } from '../actions/books'
 
 import {Button} from 'react-bootstrap'
@@ -9,7 +9,7 @@ import {Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 //css
-import "../index.css"
+import "../../index.css"
 
 class BooksIndex extends Component {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Nav,Navbar,Form,FormControl,Button } from 'react-bootstrap'
 import {Link} from 'react-router-dom';
-import '../index.css';
+import '../../index.css';
 
 function Navigation() {
     return (

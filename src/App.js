@@ -5,17 +5,18 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
 
 //component State-full
-import BookForm from './containers/BookForm'
-import BooksIndex from './containers/BooksIndex'
-import EditForm from './containers/EditForm'
+import BookForm from './containers/statefull/BookForm'
+import BooksIndex from './containers/statefull/BooksIndex'
+import EditForm from './containers/statefull/EditForm'
 
 //component Stateless
-import Navigation from './containers/Nav'
-import AboutPage from './containers/AboutPage'
-import Footer from './containers/Footer'
-import Jobs from './containers/Jobs'
-import Contact from './containers/Contact'
-import Team from './containers/Team'
+import Navigation from './containers/stateless/Nav'
+import AboutPage from './containers/stateless/AboutPage'
+import Footer from './containers/stateless/Footer'
+import Jobs from './containers/stateless/Jobs'
+import Contact from './containers/stateless/Contact'
+import Team from './containers/statefull/Team'
+import TeamDetail from './containers/statefull/TeamDetail'
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
               <Route exact path="/jobs" component={Jobs}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/teams" component={Team}/>
+              <Route exact path="/teams/:id" component={TeamDetail}/>
               <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
 

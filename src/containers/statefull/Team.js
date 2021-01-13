@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom';
 // import {getCast}from '../actions/cast'
 
 
@@ -25,8 +26,8 @@ function Team() {
         <div>
             <ul>
                 {items.map(item => (
-                <li key={item.id}>
-                    {item.firstname} {item.lastname}
+                <li key={item._id}>
+                    <Link to= {`/teams/${item._id}`}>{item.firstname} {item.lastname}</Link>
                 </li>
                 ))}
             </ul>

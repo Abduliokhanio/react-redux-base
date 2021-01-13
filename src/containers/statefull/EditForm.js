@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { editBook } from '../actions/books'
+import { editBook } from '../../actions/books'
 
 class EditForm extends Component {
     state = {
