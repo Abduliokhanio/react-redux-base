@@ -17,7 +17,7 @@ import Jobs from './components/stateless/Jobs'
 import Contact from './components/stateless/Contact'
 import Team from './components/statefull/Team'
 import TeamDetail from './components/statefull/TeamDetail'
-import BookDetail from './components/BookDetail'
+import BookDetail from './components/statefull/BookDetail'
 import Wwd from './components/stateless/Wwd'
 
 class App extends Component {

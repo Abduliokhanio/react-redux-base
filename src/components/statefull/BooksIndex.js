@@ -50,7 +50,8 @@ class BooksIndex extends Component {
 
     return (
         <div>
-              <h1>Book App</h1>
+              <h1>Blog</h1>
+              <br/>
               <ul>{this.props.loading ? <h3>Loading...</h3> : books}</ul>
         </div>
     );

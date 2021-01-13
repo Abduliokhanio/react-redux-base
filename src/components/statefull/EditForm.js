@@ -35,7 +35,7 @@ class EditForm extends Component {
     render() {
         return (
             <div>
-                 <h1>edit a book</h1>
+                 <h1>Edit Blog</h1>
                 <form onSubmit = {this.handleSubmit}>
                     title <input type="text" value ={this.state.title} onChange={this.handleChangeTitle} /><br/>
                     <br/>
