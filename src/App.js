@@ -18,6 +18,7 @@ import Contact from './components/stateless/Contact'
 import Team from './components/statefull/Team'
 import TeamDetail from './components/statefull/TeamDetail'
 import BookDetail from './components/BookDetail'
+import Wwd from './components/stateless/Wwd'
 
 class App extends Component {
 
@@ -28,7 +29,7 @@ class App extends Component {
         <div className="App App-background">
         <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
             <Navigation/>
-            
+            <div className="pb-5">
             <Switch> 
               <Route exact path="/" component={BooksIndex}/>
               <Route exact path="/new" component={BookForm}/>
@@ -36,12 +37,13 @@ class App extends Component {
               <Route exact path="/jobs" component={Jobs}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/teams" component={Team}/>
+              <Route exact path= "/whatwedo" component={Wwd}/>
               <Route exact path="/teams/:id" component={TeamDetail}/>
               <Route exact path="/books/:id" component={BookDetail}/>
               <Route exact path="/books/:id/edit" component={EditForm}/>
             </Switch>
-
             <Footer />
+            </div>
         </div>        
       </Router>
     );

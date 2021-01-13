@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom';
-// import {getCast}from '../actions/cast'
+import {Button} from 'react-bootstrap'
 
 
 function Team() {
@@ -25,12 +25,12 @@ function Team() {
     return (
         <div>
                 <h1>Our amazing team</h1>
+                <Link to = "/about"><Button variant="danger" >Cancel</Button></Link> <br/><br/>
                 {items.map((item,i) => (
                 <div key={item._id}>
                     <Link to= {`/teams/${item._id}`} >{item.firstname} {item.lastname}</Link>
                 </div>
-                ))}
-            
+                ))}<br/>
         </div>
     )  
 
