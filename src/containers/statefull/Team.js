@@ -25,9 +25,9 @@ function Team() {
     return (
         <div>
             <ul>
-                {items.map(item => (
+                {items.map((item,i) => (
                 <li key={item._id}>
-                    <Link to= {`/teams/${item._id}`}>{item.firstname} {item.lastname}</Link>
+                    <Link to= {`/teams/${item._id}`} >{item.firstname} {item.lastname}</Link>
                 </li>
                 ))}
             </ul>
