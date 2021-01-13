@@ -26,9 +26,9 @@ function Team() {
         <div>
                 <h1>Our amazing team</h1>
                 {items.map((item,i) => (
-                <li key={item._id}>
+                <div key={item._id}>
                     <Link to= {`/teams/${item._id}`} >{item.firstname} {item.lastname}</Link>
-                </li>
+                </div>
                 ))}
             
         </div>

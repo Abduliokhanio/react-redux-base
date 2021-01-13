@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks, deleteBook, editBook } from '../../actions/books'
-// import { getBooks, deleteBook, editBook, readBook } from '../actions/books'
 
 import {Button} from 'react-bootstrap'
 
@@ -33,17 +32,17 @@ class BooksIndex extends Component {
         return (
         <div>
           <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-            <li key={i}>
+            <div key={i}>
                 <h3>
                   {book.title + " "}
-                  <Button variant="success" id = {book.id}><Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}>EDIT</Link></Button>
-                  {/* <Button variant="info" id = {book.id} onClick={this.handleClickRead}>Read</Button> */}
+                  <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
+                  <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
                   <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
                 </h3> 
                 <p> 
                   {book.description} 
                 </p>
-              </li>
+              </div>
               <hr/>
           </div>)
         
