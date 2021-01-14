@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addBook } from '../../actions/books'
-import {Button, Card} from 'react-bootstrap'
+import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
 import '../../index.css'
@@ -37,16 +37,30 @@ class BookForm extends Component {
     render() {
         return (
             <div className="center-card">
-                <Card style={{backgroundColor: '#282c34', width: '20rem', height: '15rem'}} border="light" >
-                    <h1>Write A Blog</h1>
-                    <form onSubmit = {this.handleSubmit}>
-                        title <input type="text" value ={this.state.title} onChange={this.handleChangeTitle} /><br/>
-                        <br/>
-                        desc <textarea type="text" value ={this.state.description} onChange={this.handleChangeDesc}/><br/>
+                <div className="vertical-center">
+                    <Card style={{backgroundColor: '#282c34', width: '25rem', height: '17rem'}} border="light" >
+                        <div className = 'pt-2 px-3'>
+                        <Form onSubmit = {this.handleSubmit}>
+                        <Form.Group controlId="formBasicTitle">
+                            <Form.Label>Title</Form.Label>
+                            <Form.Control input type="text" value ={this.state.title} onChange={this.handleChangeTitle}  placeholder="Enter Title" />
+                            <Form.Text className="text-muted">
+                            Add a unique title so your blog sticks out!
+                            </Form.Text>
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicDescription">
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control type="text" value ={this.state.description} onChange={this.handleChangeDesc} placeholder="Enter Description" />
+                        </Form.Group>
+                        
                         <Button type="submit">Submit</Button>
                         <Link to = "/"><Button variant="danger">Cancel</Button></Link>
-                    </form>
-                </Card>
+                        </Form>
+                        </div>
+                    </Card>
+                </div>
+                
             </div>
         )
     }

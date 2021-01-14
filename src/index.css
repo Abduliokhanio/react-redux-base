@@ -118,3 +118,11 @@ hr { background-color: white; height: 1px; border: 0; }
   /* bg color = bg color under block */
   background: #282c34;
 }
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
