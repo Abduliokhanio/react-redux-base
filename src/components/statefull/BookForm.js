@@ -38,8 +38,9 @@ class BookForm extends Component {
         return (
             <div className="center-card">
                 <div className="vertical-center">
-                    <Card style={{backgroundColor: '#282c34', width: '25rem', height: '17rem'}} border="light" >
+                    <Card style={{backgroundColor: '#282c34', width: '25rem', height: '23rem'}} border="light" >
                         <div className = 'pt-2 px-3'>
+                        <h1>Create Your Blog</h1>
                         <Form onSubmit = {this.handleSubmit}>
                         <Form.Group controlId="formBasicTitle">
                             <Form.Label>Title</Form.Label>
@@ -51,7 +52,7 @@ class BookForm extends Component {
 
                         <Form.Group controlId="formBasicDescription">
                             <Form.Label>Description</Form.Label>
-                            <Form.Control type="text" value ={this.state.description} onChange={this.handleChangeDesc} placeholder="Enter Description" />
+                            <Form.Control as="textarea" rows={3} value ={this.state.description} onChange={this.handleChangeDesc} placeholder="Enter Description" />
                         </Form.Group>
                         
                         <Button type="submit">Submit</Button>

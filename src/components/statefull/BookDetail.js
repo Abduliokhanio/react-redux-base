@@ -2,8 +2,9 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 // import {readBook} from '../actions/books'
 import { connect } from 'react-redux'
-import {Button} from 'react-bootstrap'
+import {Button, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
+import '../../index.css'
 
 function BookDetail(props) {
     
@@ -23,10 +24,14 @@ function BookDetail(props) {
     }
 
     return (
-        <div>
-            <h1>{book.title}</h1>
-            <p>{book.description}</p>
-        <Link to = "/"><Button variant="danger">Cancel</Button></Link>
+        <div className="center-card">
+            <Card border = "light" style={{backgroundColor: '#282c34', width: '60rem'}}>
+                <div className="px-3 py-3">
+                    <h1>{book.title}</h1>
+                    <p>{book.description}</p>
+                    <Link to = "/"><Button variant="danger">Cancel</Button></Link>
+                </div>
+            </Card>
         </div>
     )
 }
