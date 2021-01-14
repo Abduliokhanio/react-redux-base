@@ -23,7 +23,6 @@ class BooksIndex extends Component {
 
   handleClickRead = (event) => {
     event.preventDefault()
-    
     this.props.readBook(event.target.parentElement)
   }
 

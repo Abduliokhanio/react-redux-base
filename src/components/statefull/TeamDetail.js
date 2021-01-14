@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Card} from 'react-bootstrap'
 import Tmc from '../stateless/Tmc'
-
+//container components
 function TeamDetail(props) {
 
     useEffect(() => {

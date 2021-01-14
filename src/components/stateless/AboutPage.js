@@ -4,7 +4,7 @@ import AboutPgImg from './AboutPgImg'
 import AboutInspText from './AboutInspText'
 import AboutCardDeck from './AboutCardDeck'
 import "../../index.css"
-
+//container component
 function AboutPage() {
     return (
         <div style={{ color: 'black', paddingBottom: "100px"}}>

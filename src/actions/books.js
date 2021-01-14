@@ -11,6 +11,7 @@ export const getBooks = () => {
 export const addBook = (book) => {
     return dispatch => {
         dispatch({type: "ADDING_BOOK"})
+        console.log("C")
         fetch("/blocks",{
             method: "POST",
             body: JSON.stringify(book),
@@ -20,7 +21,10 @@ export const addBook = (book) => {
             }
         })
         .then(res => res.json())
-        .then(book => dispatch({type: "BOOK_ADDED", payload: book}))
+        .then(book => {
+            console.log("e")
+            dispatch({type: "BOOK_ADDED", payload: book})})
+        console.log("d") //asynk process which is why its after c  
     }
 }
 
@@ -54,15 +58,3 @@ export const editBook = (bookpassed) => {
     }
 }
 
-// export const readBook = (book) => { //needs to work
-//     const id = book.firstElementChild.id
-//     debugger
-//     const editedBook = {title: , description: }
-//     return dispatch => {
-        
-//         dispatch({type: "READING_BOOK"})
-//         fetch(`/blocks/${id}`)
-//         .then(res => res.json())
-//         .then(() => dispatch({type: "BOOK_READ", payload: book}))
-//     }
-// }
