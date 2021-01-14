@@ -42,9 +42,10 @@ class BooksIndex extends Component {
         
                     <hr/>
                     <div>
-                      <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
+                      <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link>
                       <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
                       <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                      
                     </div>
                   </h3> 
                   <p> 
