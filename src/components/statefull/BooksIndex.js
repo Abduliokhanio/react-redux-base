@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getBooks, deleteBook, editBook } from '../../actions/books'
 
-import {Button} from 'react-bootstrap'
+import {Button, CardDeck, Card} from 'react-bootstrap'
 
 //link
 import { Link } from 'react-router-dom'
@@ -30,29 +30,38 @@ class BooksIndex extends Component {
   render() {
     const books = this.props.books.map((book, i) => {
         return (
-        <div>
+        
+        <div className="py-3 px-3" >
+          <Card style={{backgroundColor: '#282c34'}} border="light" >
           <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-            <div key={i}>
+            <div key={i} >
                 <h3>
                   {book.title + " "}
-                  <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
-                  <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
-                  <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                  <br/>
+                  <hr/>
+                  <div>
+                    <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
+                    <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
+                    <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                  </div>
                 </h3> 
                 <p> 
                   {book.description} 
                 </p>
               </div>
-              <hr/>
-          </div>)
+              
+          </Card> 
+        </div>)
         
     })
 
     return (
-        <div>
+        <div className="px-3"  >
+           
               <h1>Blog</h1>
               <br/>
-              <ul>{this.props.loading ? <h3>Loading...</h3> : books}</ul>
+              {this.props.loading ? <h3>Loading...</h3> : <CardDeck> {books} </CardDeck>}
+          
         </div>
     );
   }

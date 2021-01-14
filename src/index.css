@@ -30,3 +30,5 @@ code {
 .card-left{
   margin-left: 10px;
 }
+
+hr { background-color: white; height: 1px; border: 0; }
