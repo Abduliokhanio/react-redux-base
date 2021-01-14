@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 
 //links
-import {BrowserRouter as Router, Link, Route, Switch,} from 'react-router-dom';
+import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
 
 //component State-full
 import BookForm from './components/statefull/BookForm'
@@ -33,7 +33,10 @@ class App extends Component {
             </div>
             <div className="py-5">
             <Switch> 
-              <Route exact path="/" component={BooksIndex}/>
+              <Route exact path="/" >
+                <Redirect to="/blogs"/>
+              </Route>
+              <Route exact path="/blogs" component={BooksIndex}/>
               <Route exact path="/new" component={BookForm}/>
               <Route exact path="/about" component={AboutPage}/>
               <Route exact path="/jobs" component={Jobs}/>
