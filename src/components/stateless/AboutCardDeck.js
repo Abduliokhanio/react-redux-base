@@ -5,10 +5,10 @@ import {Link} from 'react-router-dom';
 function AboutCardDeck() {
     return (
 
-        <div>
+        <div >
             <CardDeck className="pb-3">
-            <Card>
-                <Card.Img variant="top" src="https://www.sporcle.com/blog/wp-content/uploads/2018/12/5-11.jpg" />
+            <Card border="dark" >
+                <Card.Img variant="top" src="https://www.sporcle.com/blog/wp-content/uploads/2018/12/5-11.jpg" className="px-2 pt-2"/>
                 <Card.Body>
                 <Card.Title><Link to= "/teams">Who We are</Link></Card.Title>
                 <Card.Text>
@@ -19,8 +19,8 @@ function AboutCardDeck() {
                 <small className="text-muted">Last updated 3 mins ago</small>
                 </Card.Footer>
             </Card>
-            <Card>
-                <Card.Img variant="top" src="https://www.dailydot.com/wp-content/uploads/2019/06/WHere_stream_The_Office_Michael_Pam-800x400.jpg" />
+            <Card border="dark" >
+                <Card.Img variant="top" src="https://www.dailydot.com/wp-content/uploads/2019/06/WHere_stream_The_Office_Michael_Pam-800x400.jpg" className="px-2 pt-2"/>
                 <Card.Body>
                 <Card.Title><Link to= "/whatwedo">What we do</Link></Card.Title>
                 <Card.Text>

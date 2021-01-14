@@ -30,29 +30,33 @@ class BooksIndex extends Component {
   render() {
     const books = this.props.books.map((book, i) => {
         return (
+        <div className="center-card">
+          <div className="py-3 px-3"  >
+            <Card style={{backgroundColor: '#282c34', width: '30rem'}} border="light"  >
+            <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+              <div key={i} >
+                  <h3>
+                    <div className = "card-text-description-header py-2">
+                      {book.title + " "}
+                    </div>
         
-        <div className="py-3 px-3" >
-          <Card style={{backgroundColor: '#282c34'}} border="light" >
-          <link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
-            <div key={i} >
-                <h3>
-                  {book.title + " "}
-                  <br/>
-                  <hr/>
-                  <div>
-                    <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
-                    <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
-                    <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
-                  </div>
-                </h3> 
-                <p> 
-                  {book.description} 
-                </p>
-              </div>
-              
-          </Card> 
+                    <hr/>
+                    <div>
+                      <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link> 
+                      <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
+                      <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                    </div>
+                  </h3> 
+                  <p> 
+                    <div className="card-text-description px-3">
+                      {book.description} 
+                    </div>
+                  </p>
+                </div>
+                
+            </Card> 
+          </div>
         </div>)
-        
     })
 
     return (
@@ -60,7 +64,7 @@ class BooksIndex extends Component {
            
               <h1>Blog</h1>
               <br/>
-              {this.props.loading ? <h3>Loading...</h3> : <CardDeck> {books} </CardDeck>}
+              {this.props.loading ? <h3>Loading...</h3> : <CardDeck className="center-card"> {books} </CardDeck>}
           
         </div>
     );
