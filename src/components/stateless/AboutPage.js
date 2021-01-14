@@ -9,7 +9,7 @@ function AboutPage() {
     return (
         <div style={{ color: 'black', paddingBottom: "100px"}}>
             <div className ="center-card">
-                <Card style={{ width: '75%' }}>
+                <Card style={{ width: '60rem'}}>
                     <div className = "px-3">
                         <AboutPgImg/>
                         <AboutInspText/>

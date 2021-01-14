@@ -62,7 +62,7 @@ class BooksIndex extends Component {
     return (
         <div className="px-3"  >
            
-              <h1>Blog</h1>
+              <h1>The Dunder Blog:</h1>
               <br/>
               {this.props.loading ? <h3>Loading...</h3> : <CardDeck className="center-card"> {books} </CardDeck>}
           
