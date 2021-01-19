@@ -1,25 +1,25 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-// import {readBook} from '../actions/blogs'
+// import {readBlog} from '../actions/blogs'
 import { connect } from 'react-redux'
 import {Button, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import '../../index.css'
 
-function BookDetail(props) {
+function BlogDetail(props) {
     
     const id = props.match.params.id
     useEffect(() => {
-        getBook(id)
+        getBlog(id)
     })
 
-    const [blog, setbook] = useState([]);
+    const [blog, setblog] = useState([]);
 
-    const getBook = (id) => {
+    const getBlog = (id) => {
         fetch(`http://localhost:3001/blogs/${id}`)
         .then(resp => resp.json())
         .then(data => {
-            setbook(data)
+            setblog(data)
         })
     }
 
@@ -36,5 +36,5 @@ function BookDetail(props) {
     )
 }
 
-// export default connect(null, {readBook})(BookDetail);
-export default (BookDetail);
+// export default connect(null, {readBlog})(BlogDetail);
+export default (BlogDetail);

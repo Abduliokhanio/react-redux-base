@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook, editBook } from '../../actions/blogs'
+import { getBlogs, deleteBlog, editBlog } from '../../actions/blogs'
 
 import {Button, CardDeck, Card} from 'react-bootstrap'
 
@@ -10,20 +10,20 @@ import { Link } from 'react-router-dom'
 //css
 import "../../index.css"
 
-class BooksIndex extends Component {
+class BlogsIndex extends Component {
 
   componentDidMount () {
-    this.props.getBooks()
+    this.props.getBlogs()
   }
 
   handleClick = (event) =>{
     event.preventDefault()
-    this.props.deleteBook(event.target.id)
+    this.props.deleteBlog(event.target.id)
   }
 
   handleClickRead = (event) => {
     event.preventDefault()
-    this.props.readBook(event.target.parentElement)
+    this.props.readBlog(event.target.parentElement)
   }
 
   render() {
@@ -73,10 +73,10 @@ class BooksIndex extends Component {
 
 const mapStateToProps = state => {
   return{
-    blogs: state.bookReducer.blogs,
-    loading: state.bookReducer.loading
+    blogs: state.blogReducer.blogs,
+    loading: state.blogReducer.loading
   }
 }
 
-export default connect(mapStateToProps, {getBooks, deleteBook, editBook})(BooksIndex);
-// export default connect(mapStateToProps, {getBooks, deleteBook,editBook, readBook})(BooksIndex);
+export default connect(mapStateToProps, {getBlogs, deleteBlog, editBlog})(BlogsIndex);
+// export default connect(mapStateToProps, {getBlogs, deleteBlog,editBlog, readBlog})(BlogsIndex);

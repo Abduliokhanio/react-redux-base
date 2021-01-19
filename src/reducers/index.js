@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux'
-import bookReducer from "./bookReducer"
+import blogReducer from "./blogReducer"
 
 
 const rootReducer = combineReducers({
-    bookReducer
+    blogReducer
 })
 
 export default rootReducer

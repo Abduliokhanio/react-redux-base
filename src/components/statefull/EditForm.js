@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { editBook } from '../../actions/blogs'
+import { editBlog } from '../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
@@ -15,7 +15,7 @@ class EditForm extends Component {
     handleSubmit = (event) =>{
         event.preventDefault()
         const blog = {id: this.props.match.params.id, title: this.state.title, description: this.state.description}
-        this.props.editBook(blog)
+        this.props.editBlog(blog)
         this.setState({
             title: "",
             description: ""
@@ -67,4 +67,4 @@ class EditForm extends Component {
     }
 }
 
-export default connect(null,{editBook})(EditForm)
+export default connect(null,{editBlog})(EditForm)

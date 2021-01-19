@@ -1,5 +1,5 @@
 //action obeject creator function
-export const getBooks = () => {
+export const getBlogs = () => {
     return dispatch => {
         dispatch({type: "LOADING_BOOKS"})
         fetch("/blogs")
@@ -8,7 +8,7 @@ export const getBooks = () => {
     }
 }
 
-export const addBook = (blog) => {
+export const addBlog = (blog) => {
     return dispatch => {
         dispatch({type: "ADDING_BOOK"})
         console.log("C")
@@ -28,7 +28,7 @@ export const addBook = (blog) => {
     }
 }
 
-export const deleteBook = (id) => {
+export const deleteBlog = (id) => {
     return dispatch => {
         dispatch({type: "DELETENG_BOOK"})
         fetch(`/blogs/${id}`,{
@@ -42,11 +42,11 @@ export const deleteBook = (id) => {
     }
 }
 
-export const editBook = (bookpassed) => { 
-    let blog = {title: bookpassed.title, description: bookpassed.description}
+export const editBlog = (blogpassed) => { 
+    let blog = {title: blogpassed.title, description: blogpassed.description}
     return dispatch => {
         dispatch({type: "EDITING_BOOK"})
-        fetch(`/blogs/${bookpassed.id}`,{
+        fetch(`/blogs/${blogpassed.id}`,{
             method: 'PATCH',
             body: JSON.stringify(blog),
             headers: {
@@ -54,7 +54,7 @@ export const editBook = (bookpassed) => {
                 "Accept": "application/json"
             }
         })
-        .then(() => dispatch({type: "BOOK_EDITED", payload: bookpassed}))
+        .then(() => dispatch({type: "BOOK_EDITED", payload: blogpassed}))
     }
 }
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBook } from '../../actions/blogs'
+import { addBlog } from '../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
 import '../../index.css'
 
-class BookForm extends Component {
+class BlogForm extends Component {
     state = {
         title: "",
         description: ""
@@ -16,7 +16,7 @@ class BookForm extends Component {
         event.preventDefault()
         const blog = {title: this.state.title, description: this.state.description}
         console.log("a")
-        this.props.addBook(blog)
+        this.props.addBlog(blog)
         console.log("b")
         this.setState({
             title: "",
@@ -69,4 +69,4 @@ class BookForm extends Component {
     }
 }
 
-export default connect(null,{addBook})(BookForm)
+export default connect(null,{addBlog})(BlogForm)
