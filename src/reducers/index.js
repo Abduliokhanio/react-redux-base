@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux'
 import blogReducer from "./blogReducer"
+import jobReducer from "./jobReducer"
 
 
 const rootReducer = combineReducers({
-    blogReducer
+    blogReducer,
+    jobReducer
 })
 
 export default rootReducer

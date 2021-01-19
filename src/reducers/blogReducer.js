@@ -13,13 +13,6 @@ export default (state = {blogs: [], loading: false}, action) => {
         case("BOOK_ADDED"):
             return {...state, loading:false, blogs: [...state.blogs, action.payload] }
 
-        //Read
-        // case("READING_BOOK")://idk what im doing here lol
-        //     return {...state, loading:true}
-        // case("BOOK_READ")://idk what im doing here lol
-        //     debugger
-        //     return {...state, loading:false, blogs: state.blogs.filter(blog => blog.id == action.payload)}
-
         //EDIT
         case("EDITING_BOOK")://idk what im doing here lol
             return {...state, loading:true}

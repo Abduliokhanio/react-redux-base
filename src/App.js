@@ -13,7 +13,7 @@ import EditForm from './components/statefull/EditForm'
 import Navigation from './components/stateless/Nav'
 import AboutPage from './components/stateless/AboutPage'
 import Footer from './components/stateless/Footer'
-import Jobs from './components/stateless/Jobs'
+import JobsIndex from './components/stateless/JobsIndex'
 import Contact from './components/stateless/Contact'
 import Team from './components/statefull/Team'
 import TeamDetail from './components/statefull/TeamDetail'
@@ -39,7 +39,7 @@ class App extends Component {
               <Route exact path="/blogs" component={BlogsIndex}/>
               <Route exact path="/new" component={BlogForm}/>
               <Route exact path="/about" component={AboutPage}/>
-              <Route exact path="/jobs" component={Jobs}/>
+              <Route exact path="/jobs" component={JobsIndex}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/teams" component={Team}/>
               <Route exact path= "/whatwedo" component={Wwd}/>
