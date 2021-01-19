@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBook } from '../../actions/books'
+import { addBook } from '../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
@@ -14,9 +14,9 @@ class BookForm extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        const book = {title: this.state.title, description: this.state.description}
+        const blog = {title: this.state.title, description: this.state.description}
         console.log("a")
-        this.props.addBook(book)
+        this.props.addBook(blog)
         console.log("b")
         this.setState({
             title: "",

@@ -14,7 +14,7 @@ function Footer() {
                         <Nav.Link><Link to="/contact" >Contact</Link></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                            <Nav.Link href = "#" eventKey="link-2">Amazon-Books</Nav.Link>
+                            <Nav.Link href = "#" eventKey="link-2">Amazon-blogs</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Card>

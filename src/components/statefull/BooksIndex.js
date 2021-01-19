@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBooks, deleteBook, editBook } from '../../actions/books'
+import { getBooks, deleteBook, editBook } from '../../actions/blogs'
 
 import {Button, CardDeck, Card} from 'react-bootstrap'
 
@@ -27,7 +27,7 @@ class BooksIndex extends Component {
   }
 
   render() {
-    const books = this.props.books.map((book, i) => {
+    const blogs = this.props.blogs.map((blog, i) => {
         return (
         <div className="center-card">
           <div className="py-3 px-3"  >
@@ -36,20 +36,20 @@ class BooksIndex extends Component {
               <div key={i} >
                   <h3>
                     <div className = "card-text-description-header py-2">
-                      {book.title + " "}
+                      {blog.title + " "}
                     </div>
         
                     <hr/>
                     <div>
-                      <Link to={`/books/${book.id}/edit` } className = "link" id = {book.id}><Button variant="success" id = {book.id}>Edit</Button></Link>
-                      <Link to ={`/books/${book.id}`}><Button variant="info" id = {book.id} >Read</Button></Link>
-                      <Button variant="danger" id = {book.id} onClick={this.handleClick}>Delete</Button>
+                      <Link to={`/blogs/${blog.id}/edit` } className = "link" id = {blog.id}><Button variant="success" id = {blog.id}>Edit</Button></Link>
+                      <Link to ={`/blogs/${blog.id}`}><Button variant="info" id = {blog.id} >Read</Button></Link>
+                      <Button variant="danger" id = {blog.id} onClick={this.handleClick}>Delete</Button>
                       
                     </div>
                   </h3> 
                   <p> 
                     <div className="card-text-description px-3">
-                      {book.description} 
+                      {blog.description} 
                     </div>
                   </p>
                 </div>
@@ -64,7 +64,7 @@ class BooksIndex extends Component {
            
               <h1>The Dunder Blog:</h1>
               <br/>
-              {this.props.loading ? <h3>Loading...</h3> : <CardDeck className="center-card"> {books} </CardDeck>}
+              {this.props.loading ? <h3>Loading...</h3> : <CardDeck className="center-card"> {blogs} </CardDeck>}
           
         </div>
     );
@@ -73,7 +73,7 @@ class BooksIndex extends Component {
 
 const mapStateToProps = state => {
   return{
-    books: state.bookReducer.books,
+    blogs: state.bookReducer.blogs,
     loading: state.bookReducer.loading
   }
 }

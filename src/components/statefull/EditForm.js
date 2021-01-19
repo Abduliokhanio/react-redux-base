@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { editBook } from '../../actions/books'
+import { editBook } from '../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
@@ -14,8 +14,8 @@ class EditForm extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        const book = {id: this.props.match.params.id, title: this.state.title, description: this.state.description}
-        this.props.editBook(book)
+        const blog = {id: this.props.match.params.id, title: this.state.title, description: this.state.description}
+        this.props.editBook(blog)
         this.setState({
             title: "",
             description: ""

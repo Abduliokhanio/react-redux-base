@@ -44,8 +44,8 @@ class App extends Component {
               <Route exact path="/teams" component={Team}/>
               <Route exact path= "/whatwedo" component={Wwd}/>
               <Route exact path="/teams/:id" component={TeamDetail}/>
-              <Route exact path="/books/:id" component={BookDetail}/>
-              <Route exact path="/books/:id/edit" component={EditForm}/>
+              <Route exact path="/blogs/:id" component={BookDetail}/>
+              <Route exact path="/blogs/:id/edit" component={EditForm}/>
             </Switch>
             <Footer />
             </div>

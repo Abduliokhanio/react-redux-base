@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-// import {readBook} from '../actions/books'
+// import {readBook} from '../actions/blogs'
 import { connect } from 'react-redux'
 import {Button, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
@@ -13,7 +13,7 @@ function BookDetail(props) {
         getBook(id)
     })
 
-    const [book, setbook] = useState([]);
+    const [blog, setbook] = useState([]);
 
     const getBook = (id) => {
         fetch(`http://localhost:3001/blogs/${id}`)
@@ -27,8 +27,8 @@ function BookDetail(props) {
         <div className="center-card">
             <Card border = "light" style={{backgroundColor: '#282c34', width: '60rem'}}>
                 <div className="px-3 py-3">
-                    <h1>{book.title}</h1>
-                    <p>{book.description}</p>
+                    <h1>{blog.title}</h1>
+                    <p>{blog.description}</p>
                     <Link to = "/"><Button variant="danger">Cancel</Button></Link>
                 </div>
             </Card>
