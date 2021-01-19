@@ -78,5 +78,5 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getBooks, deleteBook,editBook})(BooksIndex);
+export default connect(mapStateToProps, {getBooks, deleteBook, editBook})(BooksIndex);
 // export default connect(mapStateToProps, {getBooks, deleteBook,editBook, readBook})(BooksIndex);

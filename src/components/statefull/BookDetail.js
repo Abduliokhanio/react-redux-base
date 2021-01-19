@@ -16,7 +16,7 @@ function BookDetail(props) {
     const [book, setbook] = useState([]);
 
     const getBook = (id) => {
-        fetch(`http://localhost:3001/blocks/${id}`)
+        fetch(`http://localhost:3001/blogs/${id}`)
         .then(resp => resp.json())
         .then(data => {
             setbook(data)
