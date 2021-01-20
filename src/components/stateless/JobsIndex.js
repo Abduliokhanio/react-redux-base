@@ -17,6 +17,7 @@ class JobsIndex extends Component {
                 <div key ={i}>
                     <hr/>
                     <Link to ={`/jobs/${job.id}`}><Button id = {job.id} variant="info">Read</Button></Link>
+                    <Link to={`/jobs/${job.id}/edit` } className = "link" id = {job.id}><Button variant="success" id = {job.id}>Edit</Button></Link>
                     <h1>{job.title}</h1>
                     <p>{job.description}</p>
                     <hr/>

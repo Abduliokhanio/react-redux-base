@@ -15,6 +15,13 @@ export default (state = {jobs: [], loading: false}, action) => {
             return {...state, loading:false, jobs: [...state.jobs, action.payload] }
 
 
+        //EDIT
+        case("EDITING_JOB"):
+            return{...state, loading:true}
+        // case("BOOK_EDITED"):
+        // return {...state, loading:false, jobs: []} //dont need this
+        
+
 
         default:
             return state

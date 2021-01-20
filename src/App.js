@@ -9,6 +9,7 @@ import BlogForm from './components/statefull/BlogForm'
 import BlogsIndex from './components/statefull/BlogsIndex'
 import EditForm from './components/statefull/EditForm'
 import JobForm from './components/statefull/JobForm'
+import JobEF from './components/statefull/JobEF'
 
 //component Stateless
 import Navigation from './components/stateless/Nav'
@@ -35,22 +36,30 @@ class App extends Component {
             </div>
             <div className="py-5">
             <Switch> 
+              {/* Blogs */}
               <Route exact path="/" >
                 <Redirect to="/blogs"/>
               </Route>
               <Route exact path="/blogs" component={BlogsIndex}/>
               <Route exact path="/blogs/new" component={BlogForm}/>
-              <Route exact path="/about" component={AboutPage}/>
-              <Route exact path="/jobs" component={JobsIndex}/>
-              <Route exact path ="/jobs/:id" component={JobDetail2}/>
-              <Route exact path="/jobs/new" component={JobForm}/>
-              <Route exact path="/contact" component={Contact}/>
-              <Route exact path="/teams" component={Team}/>
-              <Route exact path= "/whatwedo" component={Wwd}/>
-              <Route exact path="/teams/:id" component={TeamDetail}/>
               <Route exact path="/blogs/:id" component={BlogDetail}/>
               <Route exact path="/blogs/:id/edit" component={EditForm}/>
+
+              {/* Jobs */}
+              <Route exact path="/jobs" component={JobsIndex}/>
+              <Route exact path="/jobs/new" component={JobForm}/>
+              <Route exact path ="/jobs/:id" component={JobDetail2}/>
+              <Route exact path ="/jobs/:id/edit" component={JobEF}/>
               
+
+              {/* Teams */}
+              <Route exact path="/teams" component={Team}/>
+              <Route exact path="/teams/:id" component={TeamDetail}/>
+
+              {/* Contacts */}
+              <Route exact path="/contact" component={Contact}/>              
+              <Route exact path= "/whatwedo" component={Wwd}/>
+              <Route exact path="/about" component={AboutPage}/>              
             </Switch>
             <Footer />
             </div>
