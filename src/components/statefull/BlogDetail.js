@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 import '../../index.css'
 
 function BlogDetail(props) {
-    
     const id = props.match.params.id
     useEffect(() => {
         getBlog(id)

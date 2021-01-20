@@ -20,6 +20,7 @@ import Team from './components/statefull/Team'
 import TeamDetail from './components/statefull/TeamDetail'
 import BlogDetail from './components/statefull/BlogDetail'
 import Wwd from './components/stateless/Wwd'
+import JobDetail2 from './components/statefull/JobDetail2'
 
 class App extends Component {
 
@@ -41,6 +42,7 @@ class App extends Component {
               <Route exact path="/blogs/new" component={BlogForm}/>
               <Route exact path="/about" component={AboutPage}/>
               <Route exact path="/jobs" component={JobsIndex}/>
+              <Route exact path ="/jobs/:id" component={JobDetail2}/>
               <Route exact path="/jobs/new" component={JobForm}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/teams" component={Team}/>
@@ -48,6 +50,7 @@ class App extends Component {
               <Route exact path="/teams/:id" component={TeamDetail}/>
               <Route exact path="/blogs/:id" component={BlogDetail}/>
               <Route exact path="/blogs/:id/edit" component={EditForm}/>
+              
             </Switch>
             <Footer />
             </div>

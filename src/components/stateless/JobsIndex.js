@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {getJobs} from '../../actions/jobs'
 import { Link } from 'react-router-dom'
+import {Button} from 'react-bootstrap' 
 
 class JobsIndex extends Component {
 
@@ -14,8 +15,11 @@ class JobsIndex extends Component {
             
             return(
                 <div key ={i}>
+                    <hr/>
+                    <Link to ={`/jobs/${job.id}`}><Button id = {job.id} variant="info">Read</Button></Link>
                     <h1>{job.title}</h1>
                     <p>{job.description}</p>
+                    <hr/>
                 </div>
             )
         })

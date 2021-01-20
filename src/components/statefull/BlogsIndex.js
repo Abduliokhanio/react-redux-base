@@ -21,11 +21,6 @@ class BlogsIndex extends Component {
     this.props.deleteBlog(event.target.id)
   }
 
-  handleClickRead = (event) => {
-    event.preventDefault()
-    this.props.readBlog(event.target.parentElement)
-  }
-
   render() {
     const blogs = this.props.blogs.map((blog, i) => {
         return (
