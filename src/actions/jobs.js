@@ -38,3 +38,15 @@ export const editJob = (jobpassed) => {
         // .then(() => dispatch({type: "BOOK_EDITED", payload: jobpassed})) dont need this 
     }
 }
+
+export const deleteJob = (jobId) => {
+    console.log("delete action")
+
+    return dispatch => {
+        dispatch({type: "DELETING_JOB"})
+        fetch(`/jobs/${jobId}`,{
+            method: 'DELETE',
+        })
+        .then(() => dispatch({type: "JOB_DELETED", payload: jobId}))
+    }
+}

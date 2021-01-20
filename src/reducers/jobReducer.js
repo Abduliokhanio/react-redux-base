@@ -20,6 +20,12 @@ export default (state = {jobs: [], loading: false}, action) => {
             return{...state, loading:true}
         // case("BOOK_EDITED"):
         // return {...state, loading:false, jobs: []} //dont need this
+
+        //DELETE
+        case("DELETING_JOB"):
+            return{...state, loading:false, job: action.payload}
+        case("JOB_DELETED"):
+        return {...state, loading:false, jobs: state.jobs.filter(job => job.id != action.payload) }
         
 
 
