@@ -9,7 +9,7 @@ function Navigation() {
                 <Navbar bg="primary" variant="dark" fixed="top">
                     <Nav.Link><Link to="/" className = "link">Home</Link></Nav.Link>
                     <Nav className="mr-auto">
-                    <Nav.Link ><Link to="/new" className = "link">New</Link></Nav.Link>
+                    <Nav.Link ><Link to="/blogs/new" className = "link">New</Link></Nav.Link>
                     <Nav.Link ><Link to="/about" className = "link">About</Link></Nav.Link>
                     
                     </Nav>

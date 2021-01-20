@@ -10,7 +10,6 @@ class JobsIndex extends Component {
     }
 
     render() {
-        debugger
         const someCode = this.props.jobs.map((job, i) => {
             
             return(
@@ -24,6 +23,7 @@ class JobsIndex extends Component {
         //Main Return
         return (
             <div>
+                <Link to="/jobs/new">New</Link>
                 {this.props.loading ? <h3>Loading...</h3> : <div>{someCode}</div>}
             </div>
         )

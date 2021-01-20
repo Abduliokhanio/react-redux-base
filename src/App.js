@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-rout
 import BlogForm from './components/statefull/BlogForm'
 import BlogsIndex from './components/statefull/BlogsIndex'
 import EditForm from './components/statefull/EditForm'
+import JobForm from './components/statefull/JobForm'
 
 //component Stateless
 import Navigation from './components/stateless/Nav'
@@ -37,9 +38,10 @@ class App extends Component {
                 <Redirect to="/blogs"/>
               </Route>
               <Route exact path="/blogs" component={BlogsIndex}/>
-              <Route exact path="/new" component={BlogForm}/>
+              <Route exact path="/blogs/new" component={BlogForm}/>
               <Route exact path="/about" component={AboutPage}/>
               <Route exact path="/jobs" component={JobsIndex}/>
+              <Route exact path="/jobs/new" component={JobForm}/>
               <Route exact path="/contact" component={Contact}/>
               <Route exact path="/teams" component={Team}/>
               <Route exact path= "/whatwedo" component={Wwd}/>
