@@ -4,24 +4,42 @@ import React, { Component } from 'react'
 //links
 import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
 
-//component State-full
+import SearchFeature from './components/SearchFeature'
+
+//////////////////////////////////component State-full
+
+//Blog
 import BlogForm from './components/statefull/Blog/BlogForm'
 import BlogsIndex from './components/statefull/Blog/BlogsIndex'
 import EditForm from './components/statefull/Blog/EditForm'
+
+//Job
 import JobForm from './components/statefull/Job/JobForm'
 import JobEF from './components/statefull/Job/JobEF'
 
-//component Stateless
-import Navigation from './components/stateless/Layout/Nav'
+//////////////////////////////////component Stateless
+
+//About 
 import AboutPage from './components/stateless/About/AboutPage'
+
+//Layout
+import Navigation from './components/stateless/Layout/Nav'
 import Footer from './components/stateless/Layout/Footer'
-import JobsIndex from './components/stateless/Job/JobsIndex'
-import Contact from './components/stateless/Contact'
+
+//Team
 import Team from './components/statefull/Team/Team'
 import TeamDetail from './components/statefull/Team/TeamDetail'
+
+//Blog
 import BlogDetail from './components/statefull/Blog/BlogDetail'
-import Wwd from './components/stateless/Wwd'
+
+//Job
 import JobDetail2 from './components/statefull/Job/JobDetail2'
+import JobsIndex from './components/stateless/Job/JobsIndex'
+
+//Other
+import Wwd from './components/stateless/Wwd'
+import Contact from './components/stateless/Contact'
 
 class App extends Component {
 
@@ -61,8 +79,8 @@ class App extends Component {
               <Route exact path= "/whatwedo" component={Wwd}/>
               <Route exact path="/about" component={AboutPage}/>   
 
-
-              <Route exact path ="/search"/>        
+              {/* SEARCH */}
+              <Route exact path ="/search" component={SearchFeature} />        
             </Switch>
             <Footer />
             </div>
