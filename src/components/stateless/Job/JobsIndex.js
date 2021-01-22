@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {getJobs , deleteJob} from '../../actions/jobs'
+import {getJobs , deleteJob} from '../../../actions/jobs'
 import { Link } from 'react-router-dom'
 import {Button} from 'react-bootstrap' 
 

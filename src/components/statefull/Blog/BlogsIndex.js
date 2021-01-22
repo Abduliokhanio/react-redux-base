@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getBlogs, deleteBlog, editBlog } from '../../actions/blogs'
+import { getBlogs, deleteBlog, editBlog } from '../../../actions/blogs'
 
 import {Button, CardDeck, Card} from 'react-bootstrap'
 
@@ -8,7 +8,7 @@ import {Button, CardDeck, Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 //css
-import "../../index.css"
+import "../../../index.css"
 
 class BlogsIndex extends Component {
 

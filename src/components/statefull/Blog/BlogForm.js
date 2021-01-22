@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBlog } from '../../actions/blogs'
+import { addBlog } from '../../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
-import '../../index.css'
+import '../../../index.css'
 
 class BlogForm extends Component {
     state = {

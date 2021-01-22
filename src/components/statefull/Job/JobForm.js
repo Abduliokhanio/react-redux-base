@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux'
-import { addJob } from '../../actions/jobs'
+import { addJob } from '../../../actions/jobs'
 
-import '../../index.css'
+import '../../../index.css'
 
 export class JobForm extends Component {
     state = {

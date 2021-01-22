@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import {Button, Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
-import '../../index.css'
+import '../../../index.css'
 
 function JobDetail2(props) {
     const id = props.match.params.id

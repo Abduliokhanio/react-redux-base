@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Card} from 'react-bootstrap'
-import Tmc from '../stateless/Tmc'
+import Tmc from '../../stateless/Team/Tmc'
 //container components
 function TeamDetail(props) {
 

@@ -5,23 +5,23 @@ import React, { Component } from 'react'
 import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
 
 //component State-full
-import BlogForm from './components/statefull/BlogForm'
-import BlogsIndex from './components/statefull/BlogsIndex'
-import EditForm from './components/statefull/EditForm'
-import JobForm from './components/statefull/JobForm'
-import JobEF from './components/statefull/JobEF'
+import BlogForm from './components/statefull/Blog/BlogForm'
+import BlogsIndex from './components/statefull/Blog/BlogsIndex'
+import EditForm from './components/statefull/Blog/EditForm'
+import JobForm from './components/statefull/Job/JobForm'
+import JobEF from './components/statefull/Job/JobEF'
 
 //component Stateless
-import Navigation from './components/stateless/Nav'
-import AboutPage from './components/stateless/AboutPage'
-import Footer from './components/stateless/Footer'
-import JobsIndex from './components/stateless/JobsIndex'
+import Navigation from './components/stateless/Layout/Nav'
+import AboutPage from './components/stateless/About/AboutPage'
+import Footer from './components/stateless/Layout/Footer'
+import JobsIndex from './components/stateless/Job/JobsIndex'
 import Contact from './components/stateless/Contact'
-import Team from './components/statefull/Team'
-import TeamDetail from './components/statefull/TeamDetail'
-import BlogDetail from './components/statefull/BlogDetail'
+import Team from './components/statefull/Team/Team'
+import TeamDetail from './components/statefull/Team/TeamDetail'
+import BlogDetail from './components/statefull/Blog/BlogDetail'
 import Wwd from './components/stateless/Wwd'
-import JobDetail2 from './components/statefull/JobDetail2'
+import JobDetail2 from './components/statefull/Job/JobDetail2'
 
 class App extends Component {
 
@@ -59,7 +59,10 @@ class App extends Component {
               {/* Contacts */}
               <Route exact path="/contact" component={Contact}/>              
               <Route exact path= "/whatwedo" component={Wwd}/>
-              <Route exact path="/about" component={AboutPage}/>              
+              <Route exact path="/about" component={AboutPage}/>   
+
+
+              <Route exact path ="/search"/>        
             </Switch>
             <Footer />
             </div>

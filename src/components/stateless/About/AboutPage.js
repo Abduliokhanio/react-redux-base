@@ -3,7 +3,7 @@ import {Card, CardDeck} from 'react-bootstrap'
 import AboutPgImg from './AboutPgImg'
 import AboutInspText from './AboutInspText'
 import AboutCardDeck from './AboutCardDeck'
-import "../../index.css"
+import "../../../index.css"
 //container component
 function AboutPage() {
     return (

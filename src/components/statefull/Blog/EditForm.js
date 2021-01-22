@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { editJob } from '../../actions/jobs'
+import { editBlog } from '../../../actions/blogs'
 import {Button, Card, Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 
-import '../../index.css'
+import '../../../index.css'
 
-class JobEF extends Component {
+class EditForm extends Component {
     state = {
         title: "",
         description: ""
@@ -14,8 +14,8 @@ class JobEF extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        const job = {id: this.props.match.params.id, title: this.state.title, description: this.state.description}
-        this.props.editJob(job)
+        const blog = {id: this.props.match.params.id, title: this.state.title, description: this.state.description}
+        this.props.editBlog(blog)
         this.setState({
             title: "",
             description: ""
@@ -55,7 +55,7 @@ class JobEF extends Component {
                                         <Form.Control as="textarea" rows={3} value ={this.state.description} onChange={this.handleChangeDesc} placeholder="Enter Description" />
                                     </Form.Group>
                                 <Button type="submit">Submit</Button>
-                                <Link to = "/jobs"><Button variant="danger">Cancel</Button></Link>
+                                <Link to = "/"><Button variant="danger">Cancel</Button></Link>
                             </Form>
                         </div>
                     </Card>
@@ -67,4 +67,4 @@ class JobEF extends Component {
     }
 }
 
-export default connect(null,{editJob}) (JobEF)
+export default connect(null,{editBlog})(EditForm)
