@@ -40,6 +40,7 @@ import JobsIndex from './components/stateless/Job/JobsIndex'
 //Other
 import Wwd from './components/stateless/Wwd'
 import Contact from './components/stateless/Contact'
+import Timer from './components/Timer'
 
 class App extends Component {
 
@@ -80,7 +81,11 @@ class App extends Component {
               <Route exact path="/about" component={AboutPage}/>   
 
               {/* SEARCH */}
-              <Route exact path ="/search" component={SearchFeature} />        
+              <Route exact path ="/search" component={SearchFeature} />     
+
+
+              {/* Timer */}
+              <Route exact path ="/timer"  component={Timer}/>      
             </Switch>
             <Footer />
             </div>
