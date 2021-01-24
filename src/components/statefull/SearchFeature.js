@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import {Form, Button, Card, CardDeck} from 'react-bootstrap'
 import { connect } from 'react-redux'
-import {getBlogs} from '../actions/blogs'
+import {getBlogs} from '../../actions/blogs'
 import { Link } from 'react-router-dom'
+
+import '../../index.css'
 
 class SearchFeature extends Component {
 
@@ -12,12 +14,15 @@ class SearchFeature extends Component {
 
     componentDidMount () {
         this.props.getBlogs()
-        debugger
     }
 
     handleClick = (event) =>{
         event.preventDefault()
-        alert("hi")
+        alert("Does the same thing as regular search but in button format")
+        let inputValue = event.target.parentElement.getElementsByTagName('input')[0].value
+        this.setState({
+            title: inputValue
+        })
     }
 
     handleChangeTitle = (event) => {
@@ -62,10 +67,11 @@ class SearchFeature extends Component {
         )
     
     return (
-        <div>
-            inside search feature
-            <Form>
-                <Form.Control type="search" onChange={this.handleChangeTitle}  placeholder="Enter Title" />
+        <div className="center-card">
+            
+            <Form style={{ width: '25rem'}}>
+                <h1>Search Here</h1>
+                <Form.Control type="search" onChange={this.handleChangeTitle}  placeholder="Enter Title" /><br/>
                 <Button onClick = {this.handleClick} variant="primary" type="submit">
                     Submit
                 </Button>

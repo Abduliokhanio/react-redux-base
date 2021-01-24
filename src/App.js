@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 //links
 import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
 
-import SearchFeature from './components/SearchFeature'
+import SearchFeature from './components/statefull/SearchFeature'
 
 //////////////////////////////////component State-full
 
