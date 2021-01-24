@@ -35,7 +35,6 @@ export const editJob = (jobpassed) => {
                 "Accept": "application/json"
             }
         })
-        // .then(() => dispatch({type: "BOOK_EDITED", payload: jobpassed})) dont need this 
     }
 }
 
@@ -48,5 +47,36 @@ export const deleteJob = (jobId) => {
             method: 'DELETE',
         })
         .then(() => dispatch({type: "JOB_DELETED", payload: jobId}))
+    }
+}
+
+export const likeJob = (cardIdPasses) => {
+    let like = {like: true}
+    return dispatch =>{
+
+        fetch(`/jobs/${cardIdPasses}`,{
+            method: 'PATCH',
+            body: JSON.stringify(like),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
+        
+    }
+
+}
+
+export const unlikeJob = (cardIdPasses) => {
+    let like = {like: false}
+    return dispatch =>{
+        fetch(`/jobs/${cardIdPasses}`,{
+            method: 'PATCH',
+            body: JSON.stringify(like),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        })
     }
 }

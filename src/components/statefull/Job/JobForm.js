@@ -14,7 +14,7 @@ export class JobForm extends Component {
 
     handleSubmit = (event) =>{
         event.preventDefault()
-        const job = {title: this.state.title, description: this.state.description}
+        const job = {title: this.state.title, description: this.state.description, like:false}
         this.props.addJob(job)
         this.setState({
             title: "",

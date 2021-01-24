@@ -1,26 +1,33 @@
 import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
+import {likeJob, unlikeJob} from '../actions/jobs'
+import {connect} from 'react-redux'
 
 class LikeBtn extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {like: false};
+        this.state = {like: this.props.likeVal}
     }
+
+    // componentWillUnmount(){
+    //     this.setState({like: this.props.likeVal})
+    // }
 
 
     handleClick1=(event)=>{
         event.preventDefault()
-        this.setState({
-            like: true
-        })
+        let cardId = event.target.parentElement.parentElement.getElementsByClassName("link")[0].id
+        this.props.likeJob(cardId)
+        this.setState({like: true})
+        
     }
 
     handleClick2=(event)=>{
         event.preventDefault()
-        this.setState({
-            like: false
-        })
+        let cardId = event.target.parentElement.parentElement.getElementsByClassName("link")[0].id
+        this.props.unlikeJob(cardId)
+        this.setState({like: false})
     }
 
     render() {
@@ -42,4 +49,10 @@ class LikeBtn extends Component {
     }
 }
 
-export default LikeBtn
+const mapStateToProps = state => {
+    return{  
+      jobs: state.jobReducer.jobs,
+    }
+}
+
+export default connect(mapStateToProps,{likeJob, unlikeJob})(LikeBtn)

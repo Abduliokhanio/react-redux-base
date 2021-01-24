@@ -28,7 +28,6 @@ export default (state = {jobs: [], loading: false}, action) => {
         return {...state, loading:false, jobs: state.jobs.filter(job => job.id != action.payload) }
         
 
-
         default:
             return state
     }
