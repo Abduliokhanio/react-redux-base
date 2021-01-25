@@ -14,9 +14,9 @@ export default (state = {blogs: [], loading: false}, action) => {
             return {...state, loading:false, blogs: [...state.blogs, action.payload] }
 
         //EDIT
-        case("EDITING_BOOK")://idk what im doing here lol
+        case("EDITING_BOOK"):
             return {...state, loading:true}
-        case("BOOK_EDITED")://idk what im doing here lol
+        case("BOOK_EDITED"):
             return {...state, loading:false, blogs: [...state.blogs, action.payload]}
 
         //DELETE
