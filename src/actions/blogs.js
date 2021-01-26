@@ -1,15 +1,21 @@
 //action obeject creator function
+//always include a .catch
+//validate on both the front and back 
+
 export const getBlogs = () => {
     return dispatch => {
         dispatch({type: "LOADING_BOOKS"})
         fetch("/blogs")
         .then(res => res.json())
         .then(blogs => dispatch({type: "BOOKS_LOADED", payload: blogs}))
+        .catch((error) => {
+            console.error('Error:', error);
+          })
     }
 }
 
 export const addBlog = (blog) => {
-    return dispatch => {
+    return dispatch => { //thunk allows us to do asyn actions 
         dispatch({type: "ADDING_BOOK"})
         console.log("C")
         fetch("/blogs",{
@@ -25,6 +31,9 @@ export const addBlog = (blog) => {
             console.log("e")
             dispatch({type: "BOOK_ADDED", payload: blog})})
         console.log("d") //asynk process which is why its after c  
+        .catch((error) => {
+            console.error('Error:', error);
+          })
     }
 }
 
@@ -39,6 +48,9 @@ export const deleteBlog = (id) => {
             }
         })
         .then(() => dispatch({type: "BOOK_DELETED", payload: id}))
+        .catch((error) => {
+            console.error('Error:', error);
+          })
     }
 }
 
@@ -55,6 +67,9 @@ export const editBlog = (blogpassed) => {
             }
         })
         .then(() => dispatch({type: "BOOK_EDITED", payload: blogpassed}))
+        .catch((error) => {
+            console.error('Error:', error);
+          })
     }
 }
 
