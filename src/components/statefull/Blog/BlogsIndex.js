@@ -14,7 +14,7 @@ class BlogsIndex extends Component {
 
   constructor(props){
     super(props)
-    this.state = {alpha: false}
+    this.state = {alpha: true}
   }
 
   componentDidMount () {
@@ -28,7 +28,7 @@ class BlogsIndex extends Component {
 
   alpibatize = (event) => {
     event.preventDefault()
-    this.setState({alpha: true})
+    this.setState({alpha: false})
   }
 
   render() {
@@ -119,7 +119,8 @@ class BlogsIndex extends Component {
               <h1>The Dunder Blog:</h1>
               <br />
               <Button variant="info" onClick = {this.alpibatize} >Alpha</Button>
-              {this.state.alpha == false ? <h3>ALPHA Loading...</h3> : <CardDeck className="center-card"> {aplha2} </CardDeck>}
+              {this.state.alpha ? <h3>ALPHA Loading...</h3> : <CardDeck className="center-card"> {aplha2} </CardDeck>}
+              <hr/>
               <br/>
               {this.props.loading ? <h3>Loading...</h3> : <CardDeck className="center-card"> {blogs} </CardDeck>}
           
