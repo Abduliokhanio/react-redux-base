@@ -20,13 +20,7 @@ function Footer() {
                         <Nav.Link ><Link to="/timer">Timer</Link></Nav.Link>
                     </Nav.Item>
 
-                    <Nav.Item>
-                        <Nav.Link ><Link to="/like">Like_Page</Link></Nav.Link>
-                    </Nav.Item>
-
-                    <Nav.Item>
-                        <Nav.Link ><Link to="/timer2">Timer2</Link></Nav.Link>
-                    </Nav.Item>
+    
 
                 </Nav>
             </Card>
