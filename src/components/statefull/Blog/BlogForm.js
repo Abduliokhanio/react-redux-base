@@ -69,4 +69,6 @@ class BlogForm extends Component {
     }
 }
 
+//dispatch comes from connect
+
 export default connect(null,{addBlog})(BlogForm)

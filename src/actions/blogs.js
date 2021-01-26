@@ -1,4 +1,8 @@
 //action obeject creator function
+//always include a .catch
+// alwyas validate as well
+//validate on both the front and back 
+
 export const getBlogs = () => {
     return dispatch => {
         dispatch({type: "LOADING_BOOKS"})
@@ -9,7 +13,7 @@ export const getBlogs = () => {
 }
 
 export const addBlog = (blog) => {
-    return dispatch => {
+    return dispatch => { //thunk allows us to do asyn actions 
         dispatch({type: "ADDING_BOOK"})
         console.log("C")
         fetch("/blogs",{

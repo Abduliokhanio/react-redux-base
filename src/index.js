@@ -12,7 +12,8 @@ import rootReducer from './reducers/index'
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
-  <Provider store ={store}>
+  // provider makes redux store availabel throughout the application
+  <Provider store ={store}> 
     <App />
   </Provider>,
   document.getElementById('root')
