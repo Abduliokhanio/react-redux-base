@@ -34,7 +34,7 @@ class LikeBtn extends Component {
 
         let button
 
-        if (this.state.like === false){
+        if (this.props.likeVal === false){
             button = <Button onClick = {this.handleClick1} variant="light">Un-Like</Button>
         }else {
             button = <Button onClick = {this.handleClick2} variant="danger">Liked</Button>

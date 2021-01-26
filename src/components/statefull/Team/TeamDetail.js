@@ -3,7 +3,6 @@ import {Card} from 'react-bootstrap'
 import Tmc from '../../stateless/Team/Tmc'
 //container components
 function TeamDetail(props) {
-
     useEffect(() => {
         teamMemberInfo(props.match.params.id)
         pokemon(Math.floor(Math.random() * 500) + 1)

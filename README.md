@@ -68,3 +68,8 @@ This section has moved here: [https://faceblog.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://faceblog.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://faceblog.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+### Notes
+hooks = allow react functions to be backwords compatable. they allow for the use of state and life-cycle methods!

@@ -28,6 +28,21 @@ export default (state = {jobs: [], loading: false}, action) => {
         return {...state, loading:false, jobs: state.jobs.filter(job => job.id != action.payload) }
         
 
+
+        //Like
+        case("JOB_LIKED"):
+            // debugger
+            let jobs2 = state.jobs.map(job => {
+                return job.id != action.payload.id? job : action.payload
+            }) 
+            return{...state, jobs : jobs2}
+
+        case("JOB_UNLIKED"):
+            let jobs3 = state.jobs.map(job => {
+                return job.id != action.payload.id? job : action.payload
+            }) 
+            return{...state, jobs : jobs3}
+
         default:
             return state
     }

@@ -53,7 +53,6 @@ export const deleteJob = (jobId) => {
 export const likeJob = (cardIdPasses) => {
     let like = {like: true}
     return dispatch =>{
-
         fetch(`/jobs/${cardIdPasses}`,{
             method: 'PATCH',
             body: JSON.stringify(like),
@@ -62,6 +61,8 @@ export const likeJob = (cardIdPasses) => {
                 "Accept": "application/json"
             }
         })
+        .then(data => data.json())
+        .then((data) => dispatch({type: "JOB_LIKED", payload: data}))
         
     }
 
@@ -78,5 +79,7 @@ export const unlikeJob = (cardIdPasses) => {
                 "Accept": "application/json"
             }
         })
+        .then(data => data.json())
+        .then((data) => dispatch({type: "JOB_UNLIKED", payload: data}))
     }
 }
