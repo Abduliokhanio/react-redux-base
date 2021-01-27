@@ -5,7 +5,7 @@
 export const getBlogs = () => {
     return dispatch => {
         dispatch({type: "LOADING_BOOKS"})
-        fetch("/blogs")
+        fetch("/blogs") 
         .then(res => res.json())
         .then(blogs => dispatch({type: "BOOKS_LOADED", payload: blogs}))
         .catch((error) => {
@@ -18,7 +18,7 @@ export const addBlog = (blog) => {
     return dispatch => { //thunk allows us to do asyn actions 
         dispatch({type: "ADDING_BOOK"})
         console.log("C")
-        fetch("/blogs",{
+        fetch("/blogs",{ //initial fetch
             method: "POST",
             body: JSON.stringify(blog),
             headers: {
@@ -26,8 +26,8 @@ export const addBlog = (blog) => {
                 "Accept": "application/json"
             }
         })
-        .then(res => res.json())
-        .then(blog => {
+        .then(res => res.json()) //promise is returned and we further process it.
+        .then(blog => { //another promise is returned and we further process it
             console.log("e")
             dispatch({type: "BOOK_ADDED", payload: blog})})
         console.log("d") //asynk process which is why its after c  
