@@ -2,6 +2,10 @@
 //always include a .catch
 //validate on both the front and back 
 
+
+// thunk allows us to functions instead of just objects 
+//really comes in handy when we need to scale and reuse our 
+//actions-object-creators
 export const getBlogs = () => {
     return dispatch => {
         dispatch({type: "LOADING_BOOKS"})
