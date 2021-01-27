@@ -73,3 +73,4 @@ This section has moved here: [https://faceblog.github.io/create-react-app/docs/t
 
 ### Notes
 hooks = allow react functions to be backwords compatable. they allow for the use of state and life-cycle methods!
+thunk = allows us to return functions rather then objects from our actions file

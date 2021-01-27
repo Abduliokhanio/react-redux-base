@@ -75,3 +75,6 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps, {getBlogs, deleteBlog, editBlog})(BlogsIndex);
 // export default connect(mapStateToProps, {getBlogs, deleteBlog,editBlog, readBlog})(BlogsIndex);
+
+// connect allows us to connect our component to our redux &&
+// allows us to use our action-object-creator functions
