@@ -63,7 +63,6 @@ class BlogForm extends Component {
                         </div>
                     </Card>
                 </div>
-                
             </div>
         )
     }
