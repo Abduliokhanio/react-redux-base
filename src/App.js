@@ -42,6 +42,7 @@ import Wwd from './components/stateless/Wwd'
 import Contact from './components/stateless/Contact'
 import Timer from './components/statefull/Timer'
 import Test from './components/Test'
+import Test2 from './components/Test2'
 
 class App extends Component {
 
@@ -88,6 +89,9 @@ class App extends Component {
 
               {/* Test */}
               <Route exact path ="/test"  component={Test}/>     
+
+              {/* Test */}
+              <Route exact path ="/test2"  component={Test2}/>     
 
             </Switch>
             <Footer />
