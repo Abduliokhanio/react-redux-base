@@ -7,13 +7,11 @@ export default (state = {jobs: [], loading: false}, action) => {
         case("JOBS_LOADED"):
             return {...state, loading:false, jobs: action.payload}
 
-
         //CREATE
         case("ADDING_JOB"):
             return {...state, loading:false, job: action.payload}
         case("JOB_ADDED"):
             return {...state, loading:false, jobs: [...state.jobs, action.payload] }
-
 
         //EDIT
         case("EDITING_JOB"):
@@ -25,9 +23,8 @@ export default (state = {jobs: [], loading: false}, action) => {
         case("DELETING_JOB"):
             return{...state, loading:false, job: action.payload}
         case("JOB_DELETED"):
-        return {...state, loading:false, jobs: state.jobs.filter(job => job.id != action.payload) }
+            return {...state, loading:false, jobs: state.jobs.filter(job => job.id != action.payload) }
         
-
 
         //Like
         case("JOB_LIKED"):
